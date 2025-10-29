@@ -37,6 +37,9 @@ const Navbar = () => {
                 <Link to="/admin/posts/new" className="navbar-link">New Post</Link>
               </li>
               <li className="navbar-item">
+                <Link to="/profile" className="navbar-link">Profile</Link>
+              </li>
+              <li className="navbar-item">
                 <span className="navbar-user">Welcome, {user?.name}</span>
               </li>
               <li className="navbar-item">

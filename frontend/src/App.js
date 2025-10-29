@@ -13,6 +13,7 @@ import PostDetail from './pages/PostDetail';
 import Login from './pages/Login';
 import AdminDashboard from './pages/AdminDashboard';
 import PostEditor from './pages/PostEditor';
+import ProfileSettings from './pages/ProfileSettings';
 
 import './styles/App.css';
 
@@ -52,6 +53,15 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <PostEditor />
+                  </ProtectedRoute>
+                }
+              />
+
+              <Route
+                path="/profile"
+                element={
+                  <ProtectedRoute>
+                    <ProfileSettings />
                   </ProtectedRoute>
                 }
               />

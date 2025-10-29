@@ -99,7 +99,7 @@ postSchema.pre('save', function(next) {
 });
 
 // Create indexes for better query performance
-postSchema.index({ slug: 1 });
+// Note: slug index is created automatically by unique: true
 postSchema.index({ status: 1, publishedAt: -1 });
 postSchema.index({ tags: 1 });
 postSchema.index({ category: 1 });
