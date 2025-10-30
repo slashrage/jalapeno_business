@@ -9,13 +9,13 @@ const {
   getCategories,
   getTags
 } = require('../controllers/postController');
-const { protect, authorize } = require('../middleware/auth');
+const { protect, authorize, optionalAuth } = require('../middleware/auth');
 const { upload, handleMulterError } = require('../middleware/upload');
 
 const router = express.Router();
 
-// Public routes
-router.get('/', getPosts);
+// Public routes (optionally authenticated)
+router.get('/', optionalAuth, getPosts);
 router.get('/slug/:slug', getPostBySlug);
 router.get('/categories', getCategories);
 router.get('/tags', getTags);

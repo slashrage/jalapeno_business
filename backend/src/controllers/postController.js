@@ -3,19 +3,30 @@ const { processImage } = require('../utils/imageProcessor');
 const fs = require('fs').promises;
 const path = require('path');
 
-// Get all posts (public)
+// Get all posts (public and admin)
 exports.getPosts = async (req, res, next) => {
   try {
     const {
       page = 1,
       limit = 10,
-      status = 'published',
+      status,
       category,
       tag,
       search
     } = req.query;
 
-    const query = { status };
+    const query = {};
+
+    // If status is explicitly provided, use it
+    // If not provided and user is not authenticated, default to 'published'
+    // If not provided and user is authenticated, show all posts
+    if (status) {
+      query.status = status;
+    } else if (!req.user) {
+      // Not authenticated - only show published posts
+      query.status = 'published';
+    }
+    // If authenticated and no status specified, show all posts (no status filter)
 
     if (category) {
       query.category = category;
