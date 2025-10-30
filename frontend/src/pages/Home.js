@@ -7,11 +7,6 @@ const Home = () => {
     <div className="home">
       <section className="hero">
         <div className="hero-content">
-          <img
-            src="/hero-image.png"
-            alt="Jalapeno Business"
-            className="hero-image"
-          />
           <div className="hero-actions">
             <Link to="/blog" className="btn btn-primary">
               Explore Blog
