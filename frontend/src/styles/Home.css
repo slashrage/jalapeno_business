@@ -17,6 +17,14 @@
   margin: 0 auto;
 }
 
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
 .hero-title {
   font-size: 48px;
   font-weight: 800;
@@ -127,6 +135,10 @@
 @media (max-width: 768px) {
   .hero {
     padding: 60px 20px;
+  }
+
+  .hero-image {
+    margin-bottom: 30px;
   }
 
   .hero-title {

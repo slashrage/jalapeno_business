@@ -7,13 +7,11 @@ const Home = () => {
     <div className="home">
       <section className="hero">
         <div className="hero-content">
-          <h1 className="hero-title">
-            <span className="hero-icon">🌶️</span>
-            Welcome to Jalapeno Business
-          </h1>
-          <p className="hero-subtitle">
-            Your source for spicy business insights and podcast episodes
-          </p>
+          <img
+            src="/hero-image.png"
+            alt="Jalapeno Business"
+            className="hero-image"
+          />
           <div className="hero-actions">
             <Link to="/blog" className="btn btn-primary">
               Explore Blog
